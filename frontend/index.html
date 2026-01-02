@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MailSort | Anime Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Fonts: Futuristic + JP vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Animated background layers -->
+  <div class="bg-stars"></div>
+  <div class="bg-neon"></div>
 
+  <header class="header">
+    <div class="logo">
+      <span class="katakana">メールソート</span>
+      <span class="title">MailSort</span>
+    </div>
+    <p class="tag">AI prioritization with a neon anime vibe.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Train model</h2>
+      <div class="row">
+        <label for="train-date"><strong>Start date</strong></label>
+        <input id="train-date" type="date" />
+      </div>
+      <div class="row">
+        <label for="train-limit"><strong>Samples</strong></label>
+        <input id="train-limit" type="number" min="1" value="5" />
+      </div>
+      <button id="btn-train" class="btn-glow">Collect samples</button>
+      <div id="train-results" class="results"></div>
+      <div id="label-area" class="label-area"></div>
+      <button id="btn-submit-labels" class="btn-glow hidden">Submit labels</button>
+    </section>
+
+    <section class="panel">
+      <h2>Process emails</h2>
+      <div class="row">
+        <label for="process-date"><strong>Start date</strong></label>
+        <input id="process-date" type="date" />
+      </div>
+      <button id="btn-process" class="btn-glow">Process</button>
+      <div id="process-results" class="results"></div>
+
+      <div class="chart-box">
+        <canvas id="countsChart" width="640" height="280"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Recovery folder</h2>
+      <div class="row">
+        <label for="recovery-date"><strong>Start date</strong></label>
+        <input id="recovery-date" type="date" />
+      </div>
+      <button id="btn-recovery" class="btn-glow">View recovery</button>
+      <div id="recovery-results" class="results"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>For Aditya — where strategy meets style.</small>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
