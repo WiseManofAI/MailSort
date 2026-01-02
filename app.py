@@ -108,6 +108,14 @@ def parse_email(message):
 # ---- Flask app ----
 app = Flask(__name__)
 
+from flask import render_template
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+
 @app.route("/api/train", methods=["POST"])
 def api_train():
     """
