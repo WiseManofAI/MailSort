@@ -53,9 +53,11 @@ Anime-themed dashboard for AI-assisted email prioritization.
 - Option B: Serve `frontend/` on a static server (e.g., `python -m http.server`), keeping same origin.
 
 ## Notes
-- Use an app-specific IMAP password.
+- Use an app-specific IMAP password. [Google Accounts -> App passwords -> Create new (Fill Windows Computer for Windows PC) -> Copy the password in bash or terminal along with your email id]
 - Folders are created if missing.
 - Model artifacts are saved beside `app.py`.
+- Double Factor Authentication must be switched on for that specififc gmail account.
+  
   ```
 
-3. Run backend:
+
